@@ -7,7 +7,7 @@
 
 <script>
 $(function() {
-	$.getJSON("https://spreadsheets.google.com/feeds/list/1zcWv8gxUWdHfdgb8eFLHgLvlWOeXOnT8xu6VtpNUPHc/1/public/values?alt=json-in-script&callback=?",
+	$.getJSON("https://spreadsheets.google.com/feeds/list/1zcWv8gxUWdHfdgb8eFLHgLvlWOeXOnT8xu6VtpNUPHc/0/public/values?alt=json-in-script&callback=?",
 	function (data) {
 		$.each(data.feed.entry, function(i,entry) {
 			
