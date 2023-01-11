@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+$(function() {
+	$.getJSON("https://spreadsheets.google.com/feeds/list/1zcWv8gxUWdHfdgb8eFLHgLvlWOeXOnT8xu6VtpNUPHc/1/public/values?alt=json-in-script&callback=?",
+	function (data) {
+		$.each(data.feed.entry, function(i,entry) {
+			
+		});
+		console.log(data);
+	});
+});
+
+/*
+if(pS.indexOf(entry.gsx$data.$t)!=-1) {
+
+			}
+*/
+</script>
+
+
+</body>
+</html>
