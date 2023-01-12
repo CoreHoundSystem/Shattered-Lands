@@ -11,10 +11,15 @@
 				const mapCanvas = document.getElementById("map");
 				if(mapCanvas.getContext) {
 					const mapItem = mapCanvas.getContext("2d");
-					mapItem.fillStyle = "rgb(200, 0, 0)";//red opaque
-					mapItem.fillRect(15, 20, 50, 50);//left, top (point) width height
-					mapItem.fillStyle = "rgba(0, 0, 200, 0.5)";//blue translucent
-					mapItem.fillRect(25, 30, 50, 50);//left, top (point) width height
+					
+					const agent1 = new Path2D("M10 10 h 80 v 80 h -80 Z");
+					rectangle.rect(10,10,50,50);
+					
+					const agent1 = new Path2D();
+					rectangle.rect(10,10,50,50);
+					
+					mapItem.stroke(rectangle);
+					mapItem.fill(circle);
 				}
 			});
 		</script>
