@@ -4,7 +4,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<script>
+		<script type="application/javascript">
 			$(function() {
 				const mapCanvas = $('#map');
 				console.log(mapCanvas.getContext);//
@@ -17,7 +17,6 @@
 					mapItem.fillStyle = "rgba(0, 0, 200, 0.5)";//blue translucent
 					mapItem.fillRect(30, 30, 50, 50);//left, top (point) width height
 				}
-				
 			});
 		</script>
 		<canvas id="map" width="450" height="450">
