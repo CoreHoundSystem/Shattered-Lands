@@ -8,7 +8,7 @@
 	<body>
 		<script>
 			$(function() {
-				const mapCanvas = document.getElementById("map");
+				const mapCanvas = $('#map').attr('id');
 				console.log(mapCanvas.getContext);
 				if(mapCanvas.getContext) {
 					const mapItem = mapCanvas.getContext("2d");
