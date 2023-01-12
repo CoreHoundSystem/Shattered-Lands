@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-</head>
-<body>
-
-<script>
-$(function() {
-	$.getJSON("https://spreadsheets.google.com/feeds/list/1zcWv8gxUWdHfdgb8eFLHgLvlWOeXOnT8xu6VtpNUPHc/0/public/values?alt=json-in-script&callback=?",
-	function (data) {
-		$.each(data.feed.entry, function(i,entry) {
-			console.log(i);
-		});
-		console.log(data);
-	});
-});
-
-/*
-if(pS.indexOf(entry.gsx$data.$t)!=-1) {
-
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<script>
+			$(function() {
+				const mapCanvas = $('#map');
+				console.log(mapCanvas.getContext);
+				if(mapCanvas.getContext) {
+					const mapItem = mapCanvas.getContext("2d");
+				}
+				
+			});
+		</script>
+		<canvas id="map" width="450" height="450">
+		</canvas>
+		<style>
+			#mapCanvas {
+				border: 1px solid black;
 			}
-*/
-</script>
-
-
-</body>
+		</style>
+	</body>
 </html>
