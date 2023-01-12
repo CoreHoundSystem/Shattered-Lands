@@ -13,10 +13,10 @@
 					const mapItem = mapCanvas.getContext("2d");
 					
 					const agent1 = new Path2D("M10 10 h 80 v 80 h -80 Z");
-					rectangle.rect(10,10,50,50);
+					agent1.rect(10,10,50,50);
 					
 					const agent2 = new Path2D();
-					rectangle.rect(10,10,50,50);
+					agent2.rect(10,10,50,50);
 					
 					mapItem.stroke(rectangle);
 					mapItem.fill(circle);
