@@ -11,6 +11,11 @@
 				if(mapCanvas.getContext) {
 					const mapItem = mapCanvas.getContext("2d");
 					console.log(mapCanvas.getContext);//
+					console.log(mapItem);//
+					mapItem.fillStyle = "rgb(200, 0, 0)";//red opaque
+					mapItem.fillRect(10, 10, 50, 50);//left, top (point) width height
+					mapItem.fillStyle = "rgba(0, 0, 200, 0.5)";//blue translucent
+					mapItem.fillRect(30, 30, 50, 50);//left, top (point) width height
 				}
 				
 			});
