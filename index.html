@@ -7,9 +7,10 @@
 		<script>
 			$(function() {
 				const mapCanvas = $('#map');
-				console.log(mapCanvas.getContext);
+				console.log(mapCanvas.getContext);//
 				if(mapCanvas.getContext) {
 					const mapItem = mapCanvas.getContext("2d");
+					console.log(mapCanvas.getContext);//
 				}
 				
 			});
@@ -17,7 +18,7 @@
 		<canvas id="map" width="450" height="450">
 		</canvas>
 		<style>
-			#mapCanvas {
+			#map {
 				border: 1px solid black;
 			}
 		</style>
