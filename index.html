@@ -57,7 +57,7 @@
 				//assign character
 				l = $('#cell' + cellID).offset().left;
 				console.log(l);
-				t = $('#cell' + cellID).offset().top;
+				t = $('#cell' + cellID).parent().offset().top;
 				console.log(t);
 				$('#map').append('<div id="player" style="background-color:red; margin-top: ' + t + ' px; margin-left: ' + l + 'px" cell="' + y + '">');
 				player = y;
