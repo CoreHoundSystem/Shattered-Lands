@@ -14,7 +14,12 @@
 				}
 			}
 			move = false;
-			document.onkeydown = action;
+			$(document).keydown(function(e) {
+				console.log(e)
+				if (event.which === 13) {
+					// login code here
+				}
+			}); 
 			//527
 			//702
 			const player = $('#cell0');
