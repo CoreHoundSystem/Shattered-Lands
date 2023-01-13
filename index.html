@@ -77,10 +77,10 @@
 				if(move == true) {
 					if (e.keyCode === 38) {
 						console.log('You pressed up!');
-						if($('#cell' + y - 100).attr('block') == 'false') {
+						if($('#cell' + player - 100).attr('block') == 'false') {
 							console.log('Path available.');
-							$('#player').detach().appendTo('#cell' + y - 100);
-							player = y - 100;
+							$('#player').css('top',$('#cell' + (player-100)).parent().offset().top);
+							player = player - 100;
 						} else {
 							console.log('Path blocked!');
 						}
