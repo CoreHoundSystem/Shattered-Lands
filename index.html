@@ -8,7 +8,7 @@
 			const maps = {
 				location: {
 					123: {
-						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '16'
+						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '16', port: '3123'
 					}
 				}
 			}
@@ -17,25 +17,25 @@
 			$(function() {
 				urlToObject($(location).attr('search'),'urlVar');
 				console.log(urlVar);//
-				loadMap(urlVar.location);
+				loadMap(urlVar.location,urlVar.camp);
 			});
 			$(function() {
 				const overlandMap = $("#map");
 					console.log(overlandMap);
 			});
-			function loadMap(x) {
+			function loadMap(x,y) {
 				$('#map').css('width',maps.location[x].mapWidth);
 				$('#map').css('height',maps.location[x].mapHeight);
 				$('#map').css('background-image','url(' + maps.location[x].mapIMG + ')');
 				$('#map').css('background-size',maps.location[x].mapWidth + 'px ' + maps.location[x].mapHeight + 'px');
-				createGrid(maps.location[x].scale);
+				createGrid(maps.location[x].scale,y,maps.location[x].port);
 				
 			}
 			function urlToObject(x,y) {
 				window[y] = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
 				console.log(window[y]);
 			}
-			function createGrid(x) {
+			function createGrid(x,y,z) {
 				w = $('#map').width();
 				h = $('#map').height();
 				for(i=1;i<=(h/x);i++) {
@@ -50,6 +50,11 @@
 						}
 					}
 				}
+				cellID = "cell" + z;
+				if($('#cell' + y)) {
+					cellID = 'cell' + y;
+				}
+				$('#' + cellID).css('background-color','red');
 			}
 		</script>
 		<map id="map" name="overlandMap"></map>
