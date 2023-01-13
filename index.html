@@ -14,6 +14,7 @@
 				}
 			}
 			move = false;
+			document.onkeydown = action;
 			//527
 			//702
 			const player = $('#cell0');
@@ -65,7 +66,6 @@
 				player = y;
 				console.log(player);
 				move = true;
-				document.onkeydown = action;
 			}
 			function block(z,ij) {
 				if(z.blocked.indexOf(ij)>-1) {
