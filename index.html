@@ -7,7 +7,7 @@
 		<script>
 			$(function() {
 				console.log($(location).attr('search'));//
-				const urlVar = $(location).attr('search').split(/[?&]+/);
+				const urlVar = $(location).attr('search').substring(1).split('&');
 				console.log(urlVar);//
 			});
 			$(function() {
