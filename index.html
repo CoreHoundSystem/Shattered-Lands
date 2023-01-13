@@ -38,10 +38,17 @@
 			function createGrid(x) {
 				w = $('#map').width();
 				h = $('#map').height();
-				for(i=0;i<(h/x);i++) {
+				for(i=1;i<(h/x);i++) {
 					$('#map').append('<div id="row' + i + '" class="mapRow">');
-					for(j=0;j<(w/x);j++) {
+					if(i=1) {
+						$('.mapRow').css('height',x + 'px');
+					}
+					for(j=1;j<(w/x);j++) {
 						$('#map').find('#row' + i).append('<div id="cell' + ((i*100) + j) + '" class="mapCell">');
+						if(j=1) {
+							$('.mapCell').css('height',x + 'px');
+							$('.mapCell').css('width',x + 'px');
+						}
 					}
 				}
 			}
