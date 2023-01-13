@@ -18,8 +18,8 @@
 					console.log(overlandMap);
 			});
 			function urlToObject(x,y) {
-				y = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
-				console.log(y);
+				[y] = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
+				console.log([y]);
 			}
 		</script>
 		<map id="map" name="overlandMap"></map>
