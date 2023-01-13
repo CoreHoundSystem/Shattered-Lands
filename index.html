@@ -51,13 +51,15 @@
 						}
 					}
 				}
-				cellID = "cell" + z.port;
+				cellID = z.port;
 				if($('#cell' + y)) {
-					cellID = 'cell' + y;
+					cellID = y;
 				}
 				//assign character
-				//$('#' + cellID).
-				//$('#map').append('<div id="player" style="background-color:red; margin-top: ' + XX + ' px; margin-left: ' + XX + 'px">');
+				left = $('#cell' + cellID).offset().left;
+				top = $('#cell' + cellID).offset().top;
+				console.log(left,top);
+				//$('#map').append('<div id="player" style="background-color:red; margin-top: ' + XX + ' px; margin-left: ' + XX + 'px" cell="' + y + '">');
 				player = y;
 				console.log(player);
 				move = true;
