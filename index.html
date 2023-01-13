@@ -64,7 +64,7 @@
 				document.onkeydown = action;
 			}
 			function block(z,ij) {
-				if(z.blocked.find(ij)==true) {
+				if(z.blocked.find(ij).length>-1) {
 					return 'block="true"';
 				} else {
 					return 'block="false"';
