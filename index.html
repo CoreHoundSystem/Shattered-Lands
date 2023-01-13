@@ -97,8 +97,8 @@
 							console.log('Path blocked!');
 						}
 					}
-					if (e.keyCode === 38) {
-						console.log('You pressed up!');
+					if (e.keyCode === 40) {
+						console.log('You pressed down!');
 						console.log($('#cell' + (player + 100)).attr('block'));
 						if($('#cell' + (player + 100)).attr('block') == 'false') {
 							console.log('Path available.');
@@ -109,7 +109,7 @@
 						}
 					}
 					if (e.keyCode === 39) {
-						console.log('You pressed left!');
+						console.log('You pressed right!');
 						console.log($('#cell' + (player - 1)).attr('block'));
 						if($('#cell' + (player + 1)).attr('block') == 'false') {
 							console.log('Path available.');
@@ -130,6 +130,7 @@
 				width: 450px;
 				height: 450px;
 				background-size: cover;
+				background-repeat: no-repeat;
 			}
 			
 			.mapRow {
