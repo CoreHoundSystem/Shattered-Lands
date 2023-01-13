@@ -13,6 +13,7 @@
 					}
 				}
 			}
+			move = false;
 			//527
 			//702
 			const player = $('#cell0');
@@ -43,6 +44,7 @@
 					$('#map').append('<div id="row' + i + '" class="mapRow">');
 					for(j=1;j<=(w/x);j++) {
 						ij = Number((i*100) + j);
+						console.log(z.blocked.find(ij));
 						$('#map').find('#row' + i).append('<div id="cell' + ((i*100) + j) + '" class="mapCell" ' + block(z,ij) + '>');
 						if(j==(w/x) && i==(h/x)) {
 							$('style')[0].append('.mapRow {height: ' + x + 'px;} .mapCell {height: ' + x + 'px; width: ' + x + 'px;}')
@@ -56,6 +58,7 @@
 				$('#' + cellID).css('background-color','red');
 				player = $('#' + cellID);
 				console.log(player);
+				move = true;
 			}
 			function block(z,ij) {
 				if(z.blocked.find(ij)==true) {
@@ -63,6 +66,9 @@
 				} else {
 					return 'block="false"';
 				}
+			}
+			if(move == true) {
+				
 			}
 		</script>
 		<map id="map" name="overlandMap"></map>
