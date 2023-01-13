@@ -40,7 +40,7 @@
 				for(i=0;i<(h/x);i++) {
 					$('#map').append('<div id="row' + i + '" class="mapRow">');
 					for(j=0;j<(w/x);j++) {
-						$('#map').child($('#row' + i)).append('<div id="cell' + ((i*100) + j) + '" class="mapCell">');
+						$('#map').find('#row' + i).append('<div id="cell' + ((i*100) + j) + '" class="mapCell">');
 					}
 				}
 			}
