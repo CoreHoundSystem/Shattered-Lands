@@ -8,7 +8,8 @@
 			const maps = {
 				location: {
 					123: {
-						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '16', port: '3123'
+						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '16', port: '3123', 
+						blocked: [3013,3014,3015,3016,3017,3018,3019]
 					}
 				}
 			}
@@ -54,6 +55,7 @@
 				}
 				$('#' + cellID).css('background-color','red');
 				player = $('#' + cellID);
+				console.log(player);
 			}
 		</script>
 		<map id="map" name="overlandMap"></map>
