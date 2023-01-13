@@ -14,6 +14,7 @@
 			}
 			//527
 			//702
+			const player = $('#cell0');
 			$(function() {
 				urlToObject($(location).attr('search'),'urlVar');
 				console.log(urlVar);//
@@ -43,9 +44,6 @@
 					for(j=1;j<=(w/x);j++) {
 						$('#map').find('#row' + i).append('<div id="cell' + ((i*100) + j) + '" class="mapCell">');
 						if(j==(w/x) && i==(h/x)) {
-							//$('.mapRow').css('height',x + 'px');
-							//$('.mapCell').css('height',x + 'px');
-							//$('.mapCell').css('width',x + 'px');
 							$('style')[0].append('.mapRow {height: ' + x + 'px;} .mapCell {height: ' + x + 'px; width: ' + x + 'px;}')
 						}
 					}
@@ -55,6 +53,7 @@
 					cellID = 'cell' + y;
 				}
 				$('#' + cellID).css('background-color','red');
+				player = $('#' + cellID);
 			}
 		</script>
 		<map id="map" name="overlandMap"></map>
