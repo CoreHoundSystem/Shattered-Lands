@@ -8,7 +8,7 @@
 			const maps = {
 				location: {
 					123: {
-						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '32'
+						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '16'
 					}
 				}
 			}
@@ -27,6 +27,7 @@
 				$('#map').css('width',maps.location[x].mapWidth);
 				$('#map').css('height',maps.location[x].mapHeight);
 				$('#map').css('background-image','url(' + maps.location[x].mapIMG + ')');
+				$('#map').css('background-size',maps.location[x].mapWidth + 'px ' + maps.location[x].mapHeight + 'px');
 				createGrid(maps.location[x].scale);
 				
 			}
@@ -39,6 +40,9 @@
 				h = $('#map').height();
 				for(i=0;i<(h/x);i++) {
 					$('#map').append('<div id="row' + i + '" class="mapRow">');
+					if(i=0) {
+						mapRow
+					}
 					for(j=0;j<(w/x);j++) {
 						$('#map').find('#row' + i).append('<div id="cell' + ((i*100) + j) + '" class="mapCell">');
 					}
@@ -52,6 +56,15 @@
 				display: block;
 				width: 450px;
 				height: 450px;
+				background-size: cover;
+			}
+			
+			.mapRow {
+				display: block;
+			}
+			
+			.mapCell {
+				display: inline-block;
 			}
 		</style>
 	</body>
