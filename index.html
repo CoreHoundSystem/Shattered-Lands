@@ -6,6 +6,10 @@
 	<body>
 		<script>
 			$(function() {
+				const urlVar = $(location).attr('href').substring($(location).attr('origin').length + $(location).attr('path').length);
+				console.log(urlVar);
+			});
+			$(function() {
 				const overlandMap = $("#map");
 					console.log(overlandMap);
 			});
