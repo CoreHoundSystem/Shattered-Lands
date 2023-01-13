@@ -6,9 +6,9 @@
 	<body>
 		<script>
 			$(function() {
-				console.log($(location).attr('search'));
-				const urlVar = $(location).attr('href').substring($(location).attr('origin').length + $(location).attr('pathname').length);
-				console.log(urlVar);
+				console.log($(location).attr('search'));//
+				const urlVar = $(location).attr('search').split(/[?&]+/);
+				console.log(urlVar);//
 			});
 			$(function() {
 				const overlandMap = $("#map");
