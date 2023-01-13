@@ -6,8 +6,8 @@
 	<body>
 		<script>
 			$(function() {
-				console.log($(location).attr('href').length);
-				const urlVar = $(location).attr('href').substring($(location).attr('origin').length + $(location).attr('path').length);
+				console.log($(location).attr('search'));
+				const urlVar = $(location).attr('href').substring($(location).attr('origin').length + $(location).attr('pathname').length);
 				console.log(urlVar);
 			});
 			$(function() {
