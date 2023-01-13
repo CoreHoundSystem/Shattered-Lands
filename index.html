@@ -55,10 +55,13 @@
 				if($('#cell' + y)) {
 					cellID = 'cell' + y;
 				}
-				$('#' + cellID).css('background-color','red');
-				player = $('#' + cellID);
+				//assign character
+				//$('#' + cellID).
+				//$('#map').append('<div id="player" style="background-color:red; margin-top: ' + XX + ' px; margin-left: ' + XX + 'px">');
+				player = y;
 				console.log(player);
 				move = true;
+				document.onkeydown = action;
 			}
 			function block(z,ij) {
 				if(z.blocked.find(ij)==true) {
@@ -67,8 +70,16 @@
 					return 'block="false"';
 				}
 			}
-			if(move == true) {
-				
+			function action(e) {
+				if(move == true) {
+					e = e || window.event;
+					if (e.keyCode == '38') {
+						if($('#cell' + y - 100).attr('block') == 'false') {
+							$('#player').detach().appendTo('#cell' + y - 100);
+							player = y - 100;
+						}
+					}
+				}
 			}
 		</script>
 		<map id="map" name="overlandMap"></map>
