@@ -7,7 +7,7 @@
 		<script>
 			$(function() {
 				console.log($(location).attr('search'));//
-				const urlVar = $(location).attr('search').substring(1).split('&');
+				const urlVar = $.parseJSON($(location).attr('search').replace('?','{').replace('=',':"').replace('&','",').concat('"}'));
 				console.log(urlVar);//
 			});
 			$(function() {
