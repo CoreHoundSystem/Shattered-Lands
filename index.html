@@ -6,14 +6,20 @@
 	<body>
 		<script>
 			$(function() {
-				console.log($(location).attr('search').replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));//
+				console.log($(location).attr('search'));//
+				urlToObject($(location).attr('search'),'urlVar');
+				/*
 				const urlVar = $.parseJSON($(location).attr('search').replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
+				*/
 				console.log(urlVar);//
 			});
 			$(function() {
 				const overlandMap = $("#map");
 					console.log(overlandMap);
 			});
+			function urlToObject(x,y) {
+				const y = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'))
+			}
 		</script>
 		<map id="map" name="overlandMap"></map>
 		<style>
