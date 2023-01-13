@@ -112,7 +112,7 @@
 					if (e.keyCode === 39) {
 						console.log('You pressed right!');
 						console.log($('#cell' + (player + 1)).attr('block'));
-						console.log((player + 1));
+						console.log(player + 1);
 						if($('#cell' + (player + 1)).attr('block') == 'false') {
 							console.log('Path available.');
 							$('#player').css('left',$('#cell' + (player + 1)).offset().left);
