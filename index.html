@@ -40,9 +40,6 @@
 				h = $('#map').height();
 				for(i=0;i<(h/x);i++) {
 					$('#map').append('<div id="row' + i + '" class="mapRow">');
-					if(i=0) {
-						mapRow
-					}
 					for(j=0;j<(w/x);j++) {
 						$('#map').find('#row' + i).append('<div id="cell' + ((i*100) + j) + '" class="mapCell">');
 					}
