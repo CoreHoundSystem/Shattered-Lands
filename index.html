@@ -14,15 +14,9 @@
 				}
 			}
 			move = false;
-			$(document).keydown(function(e) {
-				console.log(e)
-				if (e.keyCode === 38) {
-					console.log('You pressed up!');
-				}
-			}); 
 			//527
 			//702
-			const player = $('#cell0');
+			const player = 0;
 			$(function() {
 				urlToObject($(location).attr('search'),'urlVar');
 				console.log(urlVar);//
@@ -79,19 +73,21 @@
 					return 'block="false"';
 				}
 			}
-			function action(e) {
+			$(document).keydown(function(e) {
+				console.log(e)
 				if(move == true) {
-					e = e || window.event;
-					if (e.keyCode == '38') {
+					if (e.keyCode === 38) {
+						console.log('You pressed up!');
 						if($('#cell' + y - 100).attr('block') == 'false') {
+							console.log('Path available.');
 							$('#player').detach().appendTo('#cell' + y - 100);
 							player = y - 100;
+						} else {
+							console.log('Path blocked!');
 						}
-						console.log(e + ' was up!?');
 					}
-					console.log(e);
 				}
-			}
+			}); 
 		</script>
 		<map id="map" name="overlandMap"></map>
 		<style>
