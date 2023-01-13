@@ -8,10 +8,12 @@
 			const maps = {
 				location: {
 					123: {
-						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '702', mapHeight: '527', scale: '32'
+						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '32'
 					}
 				}
 			}
+			//527
+			//702
 			$(function() {
 				urlToObject($(location).attr('search'),'urlVar');
 				console.log(urlVar);//
@@ -25,10 +27,22 @@
 				$('#map').css('width',maps.location[x].mapWidth);
 				$('#map').css('height',maps.location[x].mapHeight);
 				$('#map').css('background-image','url(' + maps.location[x].mapIMG + ')');
+				createGrid(maps.location[x].scale);
+				
 			}
 			function urlToObject(x,y) {
 				window[y] = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
 				console.log(window[y]);
+			}
+			function createGrid(x) {
+				w = $('#map').width();
+				h = $('#map').height();
+				for(i=0;i<(h/x);i++) {
+					$('#map').append('<div id="row' + i + '" class="mapRow">');
+					for(j=0;j<(w/x);j++) {
+						$('#map').child($('#row' + i)).append('<div id="cell' + ((i*100) + j) + '" class="mapCell">');
+					}
+				}
 			}
 		</script>
 		<map id="map" name="overlandMap"></map>
