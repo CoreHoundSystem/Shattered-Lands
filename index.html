@@ -59,7 +59,7 @@
 				console.log(l);
 				t = $('#cell' + cellID).parent().offset().top;
 				console.log(t);
-				$('#map').append('<div id="player" style="background-color:red; margin-top: ' + t + 'px; margin-left: ' + l + 'px;" cell="' + y + '">');
+				$('#map').append('<div id="player" style="background-color:red; top: ' + t + 'px; left: ' + l + 'px;" cell="' + y + '">');
 				$('style')[0].append('#player {height: ' + z.scale + 'px; width: ' + z.scale + 'px;}');
 				
 				player = y;
