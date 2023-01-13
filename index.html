@@ -6,6 +6,7 @@
 	<body>
 		<script>
 			$(function() {
+				console.log($(location).attr('href'));
 				const urlVar = $(location).attr('href').substring($(location).attr('origin').length + $(location).attr('path').length);
 				console.log(urlVar);
 			});
@@ -14,11 +15,14 @@
 					console.log(overlandMap);
 			});
 		</script>
-		<map id="map" name="overlandMap" width="450" height="450">
+		<map id="map" name="overlandMap">
 		</map>
 		<style>
 			#map {
 				border: 1px solid black;
+				display: block;
+				width: 450px;
+				height: 450px;
 			}
 		</style>
 	</body>
