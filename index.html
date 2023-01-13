@@ -22,9 +22,9 @@
 					console.log(overlandMap);
 			});
 			function loadMap(x) {
-				$('#map').css('width',location[x].mapWidth);
-				$('#map').css('height',location[x].mapHeight);
-				$('#map').css('background-image','url(' + location[x].mapIMG + ')');
+				$('#map').css('width',maps.location[x].mapWidth);
+				$('#map').css('height',maps.location[x].mapHeight);
+				$('#map').css('background-image','url(' + maps.location[x].mapIMG + ')');
 			}
 			function urlToObject(x,y) {
 				window[y] = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
