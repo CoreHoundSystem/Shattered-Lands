@@ -6,8 +6,8 @@
 	<body>
 		<script>
 			$(function() {
-				console.log($(location).attr('search').replace('?','\'{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }\''));//
-				const urlVar = $.parseJSON($(location).attr('search').replace('?','\'{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }\''));
+				console.log($(location).attr('search').replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));//
+				const urlVar = $.parseJSON($(location).attr('search').replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
 				console.log(urlVar);//
 			});
 			$(function() {
