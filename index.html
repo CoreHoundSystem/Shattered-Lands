@@ -5,18 +5,27 @@
 	</head>
 	<body>
 		<script>
+			const maps = {
+				location: {
+					123: {
+						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '702', mapHeight: '527', scale: '32'
+					}
+				}
+			}
 			$(function() {
-				console.log($(location).attr('search'));//
 				urlToObject($(location).attr('search'),'urlVar');
-				/*
-				const urlVar = $.parseJSON($(location).attr('search').replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
-				*/
 				console.log(urlVar);//
+				loadMap(urlVar.location);
 			});
 			$(function() {
 				const overlandMap = $("#map");
 					console.log(overlandMap);
 			});
+			function loadMap(x) {
+				$('#map').css('width',location.x.mapWidth);
+				$('#map').css('height',location.x.mapHeight);
+				$('#map').css('background-image','url(' + location.x.mapIMG + ')');
+			}
 			function urlToObject(x,y) {
 				window[y] = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
 				console.log(window[y]);
