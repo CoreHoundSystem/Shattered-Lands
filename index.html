@@ -80,7 +80,7 @@
 						console.log($('#cell' + (player - 100)).attr('block'));
 						if($('#cell' + (player - 100)).attr('block') == 'false') {
 							console.log('Path available.');
-							$('#player').css('top',$('#cell' + (player-100)).parent().offset().top);
+							$('#player').css('top',$('#cell' + (player - 100)).parent().offset().top);
 							player = player - 100;
 						} else {
 							console.log('Path blocked!');
@@ -91,8 +91,30 @@
 						console.log($('#cell' + (player - 1)).attr('block'));
 						if($('#cell' + (player - 1)).attr('block') == 'false') {
 							console.log('Path available.');
-							$('#player').css('left',$('#cell' + (player-1)).offset().left);
+							$('#player').css('left',$('#cell' + (player - 1)).offset().left);
 							player = player - 1;
+						} else {
+							console.log('Path blocked!');
+						}
+					}
+					if (e.keyCode === 38) {
+						console.log('You pressed up!');
+						console.log($('#cell' + (player + 100)).attr('block'));
+						if($('#cell' + (player + 100)).attr('block') == 'false') {
+							console.log('Path available.');
+							$('#player').css('top',$('#cell' + (player + 100)).parent().offset().top);
+							player = player + 100;
+						} else {
+							console.log('Path blocked!');
+						}
+					}
+					if (e.keyCode === 39) {
+						console.log('You pressed left!');
+						console.log($('#cell' + (player - 1)).attr('block'));
+						if($('#cell' + (player + 1)).attr('block') == 'false') {
+							console.log('Path available.');
+							$('#player').css('left',$('#cell' + (player + 1)).offset().left);
+							player = player + 1;
 						} else {
 							console.log('Path blocked!');
 						}
