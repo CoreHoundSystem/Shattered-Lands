@@ -42,7 +42,7 @@
 				for(i=1;i<=(h/x);i++) {
 					$('#map').append('<div id="row' + i + '" class="mapRow">');
 					for(j=1;j<=(w/x);j++) {
-						ij = (i*100) + j;
+						ij = number((i*100) + j);
 						$('#map').find('#row' + i).append('<div id="cell' + ((i*100) + j) + '" class="mapCell" ' + block(z,ij) + '>');
 						if(j==(w/x) && i==(h/x)) {
 							$('style')[0].append('.mapRow {height: ' + x + 'px;} .mapCell {height: ' + x + 'px; width: ' + x + 'px;}')
