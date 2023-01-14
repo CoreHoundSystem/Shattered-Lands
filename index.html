@@ -11,9 +11,10 @@
 						mapIMG: 'https://www.oldgames.sk/images/oldgames/rpg/Final.Fantasy.1/Maps/ff1-gba-map_cornelia.png', mapWidth: '704', mapHeight: '544', scale: '16', port: '3123', 
 						blocked: [3013,3014,3015,3016,3017,3018,3019],
 						concealed: [3020,3021,3023,3024],
-						triggers: [2417/i,1617/i,1612/i,1009/i,1013/i,1030/i,1633/i,2517/su,1717/su,1712/su,1109/su,1113/su,1130/su,1733/su],
-						interact: [1908,1822],
-						options: [1931/fd,1932/fd,2727/fr,2729/fl]
+						triggers: {2417:i},
+						//triggers: [2417/i,1617/i,1612/i,1009/i,1013/i,1030/i,1633/i,2517/su,1717/su,1712/su,1109/su,1113/su,1130/su,1733/su],
+						//interact: [1908,1822],
+						//options: [1931/fd,1932/fd,2727/fr,2729/fl]
 					}
 				}
 			}
@@ -60,7 +61,7 @@
 						if(z.concealed.indexOf(ij)>-1) {
 							$('#cell' + ((i*100) + j)).addClass('concealed');
 						}
-						console.log(z.triggers.find('i'));
+						console.log(z.triggers[ij]);
 						
 						if(j==(w/x) && i==(h/x)) {
 							$('style')[0].append('.mapRow {height: ' + x + 'px;} .mapCell {height: ' + x + 'px; width: ' + x + 'px;}');
