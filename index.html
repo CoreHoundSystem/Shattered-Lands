@@ -104,7 +104,7 @@
 					if (e.keyCode === 38) {
 						console.log('You pressed up!');
 						console.log($('#cell' + (player - 100)).hasClass('blocked'));
-						if($('#cell' + (player - 100)).hasClass('blocked') == 'false') {
+						if($('#cell' + (player - 100)).hasClass('blocked') == false) {
 							console.log('Path available.');
 							$('#player').css('top',$('#cell' + (player - 100)).parent().offset().top);
 							player = player - 100;
