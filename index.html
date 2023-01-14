@@ -13,19 +13,21 @@
 					}
 				}
 			}
+			//set moveability, player location
 			move = false;
-			//527
-			//702
 			player = 0;
+			//get map from url
 			$(function() {
 				urlToObject($(location).attr('search'),'urlVar');
 				console.log(urlVar);//
 				loadMap(urlVar.location,urlVar.camp);
 			});
-			$(function() {
-				const overlandMap = $("#map");
-					console.log(overlandMap);
-			});
+			//for above
+			function urlToObject(x,y) {
+				window[y] = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
+				console.log(window[y]);
+			}
+			//loading map
 			function loadMap(x,y) {
 				$('#map').css('width',maps.location[x].mapWidth);
 				$('#map').css('height',maps.location[x].mapHeight);
@@ -33,10 +35,12 @@
 				$('#map').css('background-size',maps.location[x].mapWidth + 'px ' + maps.location[x].mapHeight + 'px');
 				createGrid(maps.location[x].scale,y,maps.location[x]);
 			}
-			function urlToObject(x,y) {
-				window[y] = $.parseJSON(x.replace('?','{ "').replace(/=/g,'": "').replace(/&/g,'", "').concat('" }'));
-				console.log(window[y]);
-			}
+			/*
+			$(function() {
+				const overlandMap = $("#map");
+					console.log(overlandMap);
+			});
+			*/
 			function createGrid(x,y,z) {
 				w = $('#map').width();
 				h = $('#map').height();
@@ -65,6 +69,7 @@
 				console.log(player);
 				move = true;
 			}
+			//check for block when building grid
 			function block(z,ij) {
 				if(z.blocked.indexOf(ij)>-1) {
 					return 'block="true"';
@@ -72,58 +77,52 @@
 					return 'block="false"';
 				}
 			}
+			//moving & keystrokes
 			$(document).keydown(function(e) {
-				console.log(e);
-				console.log(player);
 				if(move == true) {
 					if (e.keyCode === 38) {
 						console.log('You pressed up!');
-						console.log($('#cell' + (player - 100)).attr('block'));
 						if($('#cell' + (player - 100)).attr('block') == 'false') {
-							console.log('Path available.');
+							//console.log('Path available.');
 							$('#player').css('top',$('#cell' + (player - 100)).parent().offset().top);
 							player = player - 100;
 						} else {
-							console.log('Path blocked!');
+							//console.log('Path blocked!');
 						}
 					}
 					if (e.keyCode === 37) {
 						console.log('You pressed left!');
-						console.log($('#cell' + (player - 1)).attr('block'));
 						if($('#cell' + (player - 1)).attr('block') == 'false') {
-							console.log('Path available.');
+							//console.log('Path available.');
 							$('#player').css('left',$('#cell' + (player - 1)).offset().left);
 							player = player - 1;
 						} else {
-							console.log('Path blocked!');
+							//console.log('Path blocked!');
 						}
 					}
 					if (e.keyCode === 40) {
 						console.log('You pressed down!');
-						console.log($('#cell' + (player + 100)).attr('block'));
 						if($('#cell' + (player + 100)).attr('block') == 'false') {
-							console.log('Path available.');
+							//console.log('Path available.');
 							$('#player').css('top',$('#cell' + (player + 100)).parent().offset().top);
 							player = player + 100;
 						} else {
-							console.log('Path blocked!');
+							//console.log('Path blocked!');
 						}
 					}
 					if (e.keyCode === 39) {
 						console.log('You pressed right!');
-						console.log($('#cell' + (player + 1)).attr('block'));
-						console.log(player + 1);
 						if($('#cell' + (player + 1)).attr('block') == 'false') {
-							console.log('Path available.');
+							//console.log('Path available.');
 							$('#player').css('left',$('#cell' + (player + 1)).offset().left);
 							player = player + 1;
 						} else {
-							console.log('Path blocked!');
+							//console.log('Path blocked!');
 						}
 					}
-					console.log($('#cell' + player));
+					console.log(player);
 				}
-			}); 
+			});
 		</script>
 		<map id="map" name="overlandMap"></map>
 		<style>
