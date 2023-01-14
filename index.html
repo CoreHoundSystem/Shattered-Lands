@@ -105,11 +105,11 @@
 						console.log('You pressed up!');
 						console.log($('#cell' + (player - 100)).hasClass('blocked'));
 						if($('#cell' + (player - 100)).hasClass('blocked') == 'false') {
-							//console.log('Path available.');
+							console.log('Path available.');
 							$('#player').css('top',$('#cell' + (player - 100)).parent().offset().top);
 							player = player - 100;
 						} else {
-							//console.log('Path blocked!');
+							console.log('Path blocked!');
 						}
 					}
 					if (e.keyCode === 37) {
