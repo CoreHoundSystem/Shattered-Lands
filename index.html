@@ -83,21 +83,6 @@
 				console.log(player);
 				move = true;
 			}
-			//check for block when building grid
-			function block(z,ij) {
-				if(z.blocked.indexOf(ij)>-1) {
-					return 'block="true"';
-				} else {
-					return 'block="false"';
-				}
-			}
-			function conceal(z,ij) {
-				if(z.concealed.indexOf(ij)>-1) {
-					return 'conceal="true"';
-				} else {
-					return 'conceal="false"';
-				}
-			}
 			//moving & keystrokes
 			$(document).keydown(function(e) {
 				if(move == true) {
@@ -114,7 +99,7 @@
 					}
 					if (e.keyCode === 37) {
 						console.log('You pressed left!');
-						if($('#cell' + (player - 1)).hasClass('blocked') == 'false') {
+						if($('#cell' + (player - 1)).hasClass('blocked') == false) {
 							//console.log('Path available.');
 							$('#player').css('left',$('#cell' + (player - 1)).offset().left);
 							player = player - 1;
@@ -124,7 +109,7 @@
 					}
 					if (e.keyCode === 40) {
 						console.log('You pressed down!');
-						if($('#cell' + (player + 100)).hasClass('blocked') == 'false') {
+						if($('#cell' + (player + 100)).hasClass('blocked') == false) {
 							//console.log('Path available.');
 							$('#player').css('top',$('#cell' + (player + 100)).parent().offset().top);
 							player = player + 100;
@@ -134,7 +119,7 @@
 					}
 					if (e.keyCode === 39) {
 						console.log('You pressed right!');
-						if($('#cell' + (player + 1)).hasClass('blocked') == 'false') {
+						if($('#cell' + (player + 1)).hasClass('blocked') == false) {
 							//console.log('Path available.');
 							$('#player').css('left',$('#cell' + (player + 1)).offset().left);
 							player = player + 1;
